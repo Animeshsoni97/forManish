@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Manish Employee Details</h1>
+	
+	<marquee><h2  th:text="${message}" style="background-color: yellow;text-align:center;"></h2></marquee>
+	<div align="center">
+	<table border="1" bgcolor="pink">
+		<tr>
+			<th>Employee no</th>
+			<th>Employee name</th>
+			<th>Operation</th>
+		</tr>
+		<tr th:each="e : ${data}">
+			<td th:text="${e.empno1}"></td>
+			<td th:text="${e.ename}"></td>
+			<td > <a th:href="@{/delete?empno={id}(id=${e.empno1})}"> delete </a> </td>
+		</tr>
+	</table>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<title>form insertion</title>
+</head>
+<body>
+<form  method="POST" th:object="${emp1}">
+EmpNO::<br><input type="text" th:field="*{empno1}"><br>
+EmpName::<br><input type="text" th:field="*{ename}"><br>
+<input type="submit" value="Register">
+</form>
+</body>
+</html>
