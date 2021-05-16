@@ -2,6 +2,7 @@ package com.mySB.myController;
 
 import java.util.List;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,4 +47,15 @@ public String myCManish3(@ModelAttribute Emp1 e1,RedirectAttributes m) {
 		m.addFlashAttribute("message","employee deleted");
 		return "redirect:/getEmp";
 }//
+	@GetMapping("/edit")	
+	public String myedit(@RequestParam("empno") Integer empno, @ModelAttribute Emp1 e1) {
+		Emp1 e= service.getEmpByID(empno);
+		BeanUtils.copyProperties(e, e1);
+		return "EmaployeeForm";
+	}//
+	@PostMapping("/edit")	
+	public String myeditSubmitt(@ModelAttribute Emp1 e1) {
+		service.insertEmp(e1);
+		return "redirect:/getEmp";
+	}//
 }//class 

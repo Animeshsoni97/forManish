@@ -13,15 +13,15 @@
 		<tr>
 			<th>Employee no</th>
 			<th>Employee name</th>
-			<th>Operation</th>
+			<th colspan="2">Operation</th>
 		</tr>
 		<tr th:each="e : ${data}">
 			<td th:text="${e.empno1}"></td>
 			<td th:text="${e.ename}"></td>
 			<td > <a th:href="@{/delete?empno={id}(id=${e.empno1})}"> delete </a> </td>
+			<td > <a th:href="@{/edit?empno={id}(id=${e.empno1})}"> edit </a></td>
 		</tr>
 	</table>
 	</div>
-
 </body>
 </html>

@@ -10,4 +10,6 @@ public interface IEmpService {
 	
 	public Emp1 insertEmp(Emp1 e);
 public void deleteEmp(Integer e);
+
+Emp1 getEmpByID(Integer empno1);
 }

@@ -1,4 +1,4 @@
-package com.mySB.myController;
+package com.mySB.repo;
 
 import org.springframework.data.repository.CrudRepository;
 
